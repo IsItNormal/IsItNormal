@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 var upload = require("multer")({dest: "uploads/"});
-var db = require("../../db/connection");
 var Post = require("../../db/models/post.js");
 
 router.get('/', function(req, res){
