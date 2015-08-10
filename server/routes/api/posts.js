@@ -8,6 +8,7 @@ router.get('/', function(req, res){
     if(err){
       res.send(500);
     } else {
+      console.log(posts);
       res.json(posts);
     }
   });
@@ -19,19 +20,23 @@ router.get('/:id', function(req, res){
 });
 
 router.post('/', upload.single('picture'), function(req, res){
+  console.log("AYO WE GOT AN UPLOAD");
   var post = new Post({
-    image_path: req.destination,
-    description: req.params.description,
+    image_path: __dirname +'/' + req.file.destination + req.file.filename,
+    description: req.body.description,
     meta: {
       normal_votes: 0,
-      not_normal_votes: 0
+      not_normal_votes: 0,
     }
   });
 
+  console.log(post);
   post.save(function(err) {
     if(err){
+      console.log("PROLEMS");
       res.send(500);
     } else {
+      console.log(post);
       res.send(200);
     }
   });
