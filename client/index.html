@@ -1,0 +1,39 @@
+<!DOCTYPE HTML> 
+<html>
+<head>
+  <title>Is It Normal?</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+
+  <script src="models/PhotoModel.js"></script>
+  <script src="models/AppModel.js"></script>
+  <script src="collections/PhotoLibrary.js"></script>
+  <script src="views/AppView.js"></script>
+  <script src="views/HomepageView.js"></script>
+  <script src="views/SelectedView.js"></script>c
+  <script src="views/ScaleView.js"></script>
+  
+</head>
+<body id="main">
+  <script> 
+  $(function(){ 
+    $.ajax({ 
+      url: 'api/posts', 
+      method: 'GET',
+      success: function(data){ 
+        var library = new PhotoLibrary(data);
+        var app = new AppModel({library: library})
+
+        var appView = new AppView({model: app});
+        $('#main').append(appView.render())
+      },
+      error: function(){ 
+        console.log("there was an error connecting to the database.")
+      }
+    })
+  });
+  </script>
+</body>
+</html>
