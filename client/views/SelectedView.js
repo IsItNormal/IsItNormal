@@ -4,7 +4,7 @@ var SelectedView = Backbone.View.extend({
     this.render();
   },
 
-  template:  _.template('<h2><%- title %></h2><img src= <%=image%> ></img> \
+  template:  _.template('<h2><%- description %></h2><img src= <%=image_path%> ></img> \
                         <button id="not">WAF</button><span><button id="normal">Normal</button>'),
 
   render: function(){ 

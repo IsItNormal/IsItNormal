@@ -1,5 +1,6 @@
 var AppView = Backbone.View.extend({ 
   initialize: function(){ 
+    console.log('appview')
     this.homepageView = new HomepageView({collection: this.model.get('library')});
     this.render();
 
