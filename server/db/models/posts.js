@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var Post = new Schema({
+var PostSchema = new Schema({
   image_path:  String,
   description: String,
   location:   String,
@@ -13,7 +13,7 @@ var Post = new Schema({
   created_at: Date
 });
 
-Post.pre('save', function(next){
+PostSchema.pre('save', function(next){
   now = new Date();
   this.updated_at = now;
   if ( !this.created_at ) {
@@ -21,5 +21,7 @@ Post.pre('save', function(next){
   }
   next();
 });
+
+var Post = mongoose.model('Post', PostSchema);
 
 module.exports = Post;
