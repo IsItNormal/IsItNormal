@@ -10,9 +10,7 @@ app.use(bodyParser.json());
 
 app.use("/api/posts", postRoutes);
 
-db.on('connected', function(){
-  app.listen(3000, function(){
-    console.log('Connected to Mongo')
-    console.log("Normalcy on port 3000");
-  });
-})
+app.listen(3000, function(){
+  console.log('Connected to Mongo')
+  console.log("Normalcy on port 3000");
+});
