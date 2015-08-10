@@ -8,7 +8,7 @@ var PostSchema = new Schema({
   location:   String,
   meta: {
     normal_votes: Number,
-    not_normal_notes:  Number
+    not_normal_votes:  Number
   },
   created_at: Date
 });
