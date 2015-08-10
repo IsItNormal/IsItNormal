@@ -21,7 +21,7 @@ router.get('/:id', function(req, res){
 
 router.post('/', upload.single('picture'), function(req, res){
   var post = new Post({
-    image_path: __dirname +'/' + req.file.destination + req.file.filename,
+    image_path: req.file.filename,
     description: req.body.description,
     meta: {
       normal_votes: 0,
