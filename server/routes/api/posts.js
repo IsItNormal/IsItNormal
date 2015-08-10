@@ -1,10 +1,11 @@
 var express = require("express");
 var router = express.Router();
 var upload = require("multer")({dest: "uploads/"});
+var db = require("../../db/connection");
 var Post = require("../../db/models/post.js");
 
 router.get('/', function(req, res){
-  Post.find({}).limit(20).sort('-date').exec(function(err, posts){
+  Post.find({}).sort('-date').limit(20).exec(function(err, posts){
     if(err){
       res.send(500);
     } else {
@@ -20,7 +21,6 @@ router.get('/:id', function(req, res){
 });
 
 router.post('/', upload.single('picture'), function(req, res){
-  console.log("AYO WE GOT AN UPLOAD");
   var post = new Post({
     image_path: __dirname +'/' + req.file.destination + req.file.filename,
     description: req.body.description,
@@ -30,14 +30,11 @@ router.post('/', upload.single('picture'), function(req, res){
     }
   });
 
-  console.log(post);
   post.save(function(err) {
     if(err){
-      console.log("PROLEMS");
-      res.send(500);
+      res.sendStatus(500);
     } else {
-      console.log(post);
-      res.send(200);
+      res.sendStatus(200);
     }
   });
 
