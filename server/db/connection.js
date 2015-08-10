@@ -2,6 +2,6 @@ var mongoose = require('mongoose');
 
 var uri = 'mongodb://localhost/isitnormal';
 
-var db = mongoose.createConnection(uri);
+var db = mongoose.connect(uri);
 
 module.exports = db;
