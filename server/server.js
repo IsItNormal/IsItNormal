@@ -2,7 +2,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var postRoutes = require("./routes/api/posts");
 var db = require("./db/connection");
-var upload = require("multer")({dest: "uploads/"});
 var app = express();
 
 /* Middlewares */
