@@ -21,6 +21,7 @@ var SelectedView = Backbone.View.extend({
 
   eventTrigger: function(){ 
     this.model.voted();
+    this.remove();
   }
 
 

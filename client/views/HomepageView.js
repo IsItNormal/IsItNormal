@@ -21,7 +21,6 @@ var HomepageView = Backbone.View.extend({
 
   renderScale: function(){ 
     this.$el.append(this.scaleView.$el)
-    this.$el.remove(this.selectedView.$el)
     console.log('renderScale triggered')
   }
 
