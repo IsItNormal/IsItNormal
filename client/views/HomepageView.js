@@ -10,10 +10,13 @@ var HomepageView = Backbone.View.extend({
 
   renderSelected: function(){ 
     this.$el.append(this.selectedView.$el)
+    console.log('renderSelected triggered')
   },
 
   renderScale: function(){ 
     this.$el.append(this.scaleView.$el)
+    console.log('renderScale triggered')
+
   }
 
 });
