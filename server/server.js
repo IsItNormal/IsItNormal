@@ -6,7 +6,7 @@ var app = express();
 
 /* Middlewares */
 app.use(express.static(__dirname + "/../client"));
-app.use(express.static(__dirname + "/../uploads"));
+app.use(express.static(__dirname + "/uploads"));
 app.use(bodyParser.json());
 
 app.use("/api/posts", postRoutes);
