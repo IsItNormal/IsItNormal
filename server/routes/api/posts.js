@@ -25,7 +25,8 @@ router.get('/:id', function(req, res){
       res.setStatus(500);
     } else {
       res.json(post);
-    });
+    }
+  });
 });
 
 /**
