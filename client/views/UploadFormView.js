@@ -1,4 +1,4 @@
-var UploadForm = Backbone.View.extend({
+var UploadFormView = Backbone.View.extend({
   template: _.template("<form action='http:localhost:3000/api/posts" +
                          "enctype='multipart/form-data" +
                          "method='POST'>" +
