@@ -4,8 +4,7 @@ var SelectedView = Backbone.View.extend({
     this.render();
   },
 
-  template:  _.template('<h2><%- description %></h2><img src= <%=image_path%> ></img> \
-                        <button id="not">WAF</button><span><button id="normal">Normal</button>'),
+  template:  _.template('<button id="not">WAF</button><button id="normal">Normal</button>'),
 
   render: function(){ 
     this.$el.append(this.template(this.model.attributes))
@@ -22,6 +21,7 @@ var SelectedView = Backbone.View.extend({
 
   eventTrigger: function(){ 
     this.model.voted();
+    this.remove();
   }
 
 
