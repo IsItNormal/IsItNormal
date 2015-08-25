@@ -15,6 +15,7 @@
   <script src="views/SelectedView.js"></script>
   <script src="views/ScaleView.js"></script>
   <script src="views/ImageView.js"></script>
+  <script src="router.js"></script>
 
   
   <script> 
@@ -33,7 +34,11 @@
       error: function(){ 
         console.log("there was an error connecting to the database.")
       }
-    })
+
+
+    });
+    new Router();
+    Backbone.history.start(); 
   });
   </script>
 </head>
