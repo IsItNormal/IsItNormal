@@ -1,4 +1,5 @@
 var HomepageView = Backbone.View.extend({ 
+  id: 'home',
   initialize: function(){ 
     this.selectedView = new SelectedView({model: this.collection.at(0)});
     this.scaleView = new ScaleView({model: this.collection.at(0)});

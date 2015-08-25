@@ -1,4 +1,5 @@
 var ImageView = Backbone.View.extend({ 
+  id: 'image',
   template: _.template('<h2><%- description %></h2><img src= <%=image_path%> ></img>'),
 
   initialize: function(){ 
