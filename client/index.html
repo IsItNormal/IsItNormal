@@ -17,28 +17,6 @@
   <script src="views/ImageView.js"></script>
   <script src="router.js"></script>
 
-  
-  <script> 
-  $(function(){ 
-    $.ajax({ 
-      url: 'api/posts', 
-      method: 'GET',
-      success: function(data){ 
-        console.log(data)
-        var library = new PhotoLibrary(data);
-        var app = new AppModel({library: library})
-
-        var appView = new AppView({model: app});
-        $('#main').append(appView.render())
-      },
-      error: function(){ 
-        console.log("there was an error connecting to the database.")
-      }
-
-
-    });
-  });
-  </script>
 </head>
 <body id="main">
 </body>
